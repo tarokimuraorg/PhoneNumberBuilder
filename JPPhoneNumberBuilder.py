@@ -48,12 +48,7 @@ class JPPhoneNumberBuilder:
         raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','init','invalid argument','the argument is an incompatible phone number.'))
 
     def hyphenated(self) -> str:
-
-        """
-        if (self.isJPPhoneNumber()):
-            return self._phone_number
-        """
-        
+     
         if (re.match('^0\d{9}$',self._phone_number)):
             
             # 市外局番 : 4桁
@@ -159,6 +154,21 @@ class JPPhoneNumberBuilder:
             three_digits.append('250')
             three_digits.append('254')
             three_digits.append('255')
+            three_digits.append('256')
+            three_digits.append('257')
+            three_digits.append('258')
+            three_digits.append('259')
+            three_digits.append('260')
+            three_digits.append('261')
+            three_digits.append('263')
+            three_digits.append('264')
+            three_digits.append('265')
+            three_digits.append('266')
+            three_digits.append('267')
+            three_digits.append('268')
+            three_digits.append('269')
+            three_digits.append('270')
+            three_digits.append('274')
 
             if (self._phone_number[1:4] in three_digits):
                 return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:6],self._phone_number[6:])
@@ -174,6 +184,8 @@ class JPPhoneNumberBuilder:
             two_digits.append('23')
             two_digits.append('24')
             two_digits.append('25')
+            two_digits.append('26')
+            two_digits.append('27')
 
             if (self._phone_number[1:3] in two_digits):
                 return "{}-{}-{}".format(self._phone_number[0:3],self._phone_number[3:6],self._phone_number[6:])
