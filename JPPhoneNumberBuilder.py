@@ -169,6 +169,24 @@ class JPPhoneNumberBuilder:
             three_digits.append('269')
             three_digits.append('270')
             three_digits.append('274')
+            three_digits.append('276')
+            three_digits.append('277')
+            three_digits.append('278')
+            three_digits.append('279')
+            three_digits.append('280')
+            three_digits.append('282')
+            three_digits.append('283')
+            three_digits.append('284')
+            three_digits.append('285')
+            three_digits.append('287')
+            three_digits.append('288')
+            three_digits.append('289')
+            three_digits.append('291')
+            three_digits.append('293')
+            three_digits.append('294')
+            three_digits.append('295')
+            three_digits.append('296')
+            three_digits.append('297')
 
             if (self._phone_number[1:4] in three_digits):
                 return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:6],self._phone_number[6:])
@@ -186,7 +204,9 @@ class JPPhoneNumberBuilder:
             two_digits.append('25')
             two_digits.append('26')
             two_digits.append('27')
-
+            two_digits.append('28')
+            two_digits.append('29')
+            
             if (self._phone_number[1:3] in two_digits):
                 return "{}-{}-{}".format(self._phone_number[0:3],self._phone_number[3:6],self._phone_number[6:])
 
