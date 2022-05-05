@@ -187,6 +187,18 @@ class JPPhoneNumberBuilder:
             three_digits.append('295')
             three_digits.append('296')
             three_digits.append('297')
+            three_digits.append('299')
+            three_digits.append('422')
+            three_digits.append('428')
+            three_digits.append('436')
+            three_digits.append('438')
+            three_digits.append('439')
+            three_digits.append('460')
+            three_digits.append('463')
+            three_digits.append('465')
+            three_digits.append('466')
+            three_digits.append('467')
+            three_digits.append('470')
 
             if (self._phone_number[1:4] in three_digits):
                 return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:6],self._phone_number[6:])
@@ -206,10 +218,24 @@ class JPPhoneNumberBuilder:
             two_digits.append('27')
             two_digits.append('28')
             two_digits.append('29')
+            two_digits.append('42')
+            two_digits.append('43')
+            two_digits.append('44')
+            two_digits.append('45')
+            two_digits.append('46')
+            two_digits.append('47')
             
             if (self._phone_number[1:3] in two_digits):
                 return "{}-{}-{}".format(self._phone_number[0:3],self._phone_number[3:6],self._phone_number[6:])
 
+            # 市外局番 : 1桁
+            one_digits = []
+            one_digits.append('3')
+            one_digits.append('4')
+
+            if (self._phone_number[1:2] in one_digits):
+                return "{}-{}-{}".format(self._phone_number[0:2],self._phone_number[2:6],self._phone_number[6:])
+            
             raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','init','invalid argument','the argument is an incompatible phone number.'))
 
         raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','init','invalid argument','the argument must be a 10-digit number.'))
