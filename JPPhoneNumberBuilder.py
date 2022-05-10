@@ -81,6 +81,7 @@ class JPPhoneNumberBuilder:
             four_digits.append('4996')
             four_digits.append('4998')
             four_digits.append('5769')
+            four_digits.append('5979')
 
             if (self._phone_number[1:5] in four_digits):
                 return "{}-{}-{}".format(self._phone_number[0:5],self._phone_number[5:6],self._phone_number[6:])
@@ -253,6 +254,15 @@ class JPPhoneNumberBuilder:
             three_digits.append('586')
             three_digits.append('587')
             three_digits.append('594')
+            three_digits.append('595')
+            three_digits.append('596')
+            three_digits.append('597')
+            three_digits.append('598')
+            three_digits.append('599')
+            three_digits.append('721')
+            three_digits.append('725')
+            three_digits.append('735')
+            three_digits.append('736')
 
             if (self._phone_number[1:4] in three_digits):
                 return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:6],self._phone_number[6:])
@@ -286,6 +296,8 @@ class JPPhoneNumberBuilder:
             two_digits.append('55')
             two_digits.append('58')
             two_digits.append('59')
+            two_digits.append('72')
+            two_digits.append('73')
             
             if (self._phone_number[1:3] in two_digits):
                 return "{}-{}-{}".format(self._phone_number[0:3],self._phone_number[3:6],self._phone_number[6:])
@@ -294,6 +306,7 @@ class JPPhoneNumberBuilder:
             one_digits = []
             one_digits.append('3')
             one_digits.append('4')
+            one_digits.append('6')
 
             if (self._phone_number[1:2] in one_digits):
                 return "{}-{}-{}".format(self._phone_number[0:2],self._phone_number[2:6],self._phone_number[6:])
