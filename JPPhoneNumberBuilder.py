@@ -83,6 +83,12 @@ class JPPhoneNumberBuilder:
             four_digits.append('5769')
             four_digits.append('5979')
             four_digits.append('7468')
+            four_digits.append('8387')
+            four_digits.append('8388')
+            four_digits.append('8396')
+            four_digits.append('8477')
+            four_digits.append('8512')
+            four_digits.append('8514')
 
             if (self._phone_number[1:5] in four_digits):
                 return "{}-{}-{}".format(self._phone_number[0:5],self._phone_number[5:6],self._phone_number[6:])
@@ -301,6 +307,24 @@ class JPPhoneNumberBuilder:
             three_digits.append('820')
             three_digits.append('823')
             three_digits.append('824')
+            three_digits.append('826')
+            three_digits.append('827')
+            three_digits.append('829')
+            three_digits.append('833')
+            three_digits.append('834')
+            three_digits.append('835')
+            three_digits.append('836')
+            three_digits.append('837')
+            three_digits.append('838')
+            three_digits.append('845')
+            three_digits.append('846')
+            three_digits.append('847')
+            three_digits.append('848')
+            three_digits.append('852')
+            three_digits.append('853')
+            three_digits.append('854')
+            three_digits.append('855')
+            three_digits.append('856')
 
             if (self._phone_number[1:4] in three_digits):
                 return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:6],self._phone_number[6:])
@@ -342,6 +366,8 @@ class JPPhoneNumberBuilder:
             two_digits.append('78')
             two_digits.append('79')
             two_digits.append('82')
+            two_digits.append('83')
+            two_digits.append('84')
             
             if (self._phone_number[1:3] in two_digits):
                 return "{}-{}-{}".format(self._phone_number[0:3],self._phone_number[3:6],self._phone_number[6:])
