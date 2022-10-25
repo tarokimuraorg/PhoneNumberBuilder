@@ -37,6 +37,9 @@ class JPPhoneNumberBuilder:
 
         if (re.match('^0\d{4}-\d{1}-\d{4}$',self._phone_number)):
             return True
+
+        if (re.match('^0\d{3}-\d{3}-\d{3}', self._phone_number)):
+            return True
         
         return False
 
@@ -50,6 +53,26 @@ class JPPhoneNumberBuilder:
     def hyphenated(self) -> str:
      
         if (re.match('^0\d{9}$',self._phone_number)):
+
+            # 着信課金用電話番号
+            if (self._phone_number[1:4] == '120'):
+
+                body_digits = []
+                body_digits.append('000')
+                body_digits.append('001')
+                body_digits.append('002')
+                body_digits.append('003')
+                body_digits.append('004')
+                body_digits.append('005')
+                body_digits.append('006')
+                body_digits.append('007')
+                body_digits.append('008')
+                body_digits.append('009')
+
+                if (self._phone_number[4:7] in body_digits):
+                    return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:7],self._phone_number[7:])
+
+                raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','init','invalid argument','the argument is an incompatible phone number.'))
             
             # 市外局番 : 4桁
             four_digits = []
