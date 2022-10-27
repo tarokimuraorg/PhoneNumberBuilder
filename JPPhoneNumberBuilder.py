@@ -58,6 +58,7 @@ class JPPhoneNumberBuilder:
             if (self._phone_number[1:4] == '120'):
 
                 body_digits = []
+                
                 body_digits.append('000')
                 body_digits.append('001')
                 body_digits.append('002')
@@ -68,6 +69,28 @@ class JPPhoneNumberBuilder:
                 body_digits.append('007')
                 body_digits.append('008')
                 body_digits.append('009')
+
+                body_digits.append('010')
+                body_digits.append('011')
+                body_digits.append('012')
+                body_digits.append('013')
+                body_digits.append('014')
+                body_digits.append('015')
+                body_digits.append('016')
+                body_digits.append('017')
+                body_digits.append('018')
+                body_digits.append('019')
+
+                body_digits.append('020')
+                body_digits.append('021')
+                body_digits.append('022')
+                body_digits.append('023')
+                body_digits.append('024')
+                body_digits.append('025')
+                body_digits.append('026')
+                body_digits.append('027')
+                body_digits.append('028')
+                body_digits.append('029')
 
                 if (self._phone_number[4:7] in body_digits):
                     return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:7],self._phone_number[7:])
