@@ -92,6 +92,28 @@ class JPPhoneNumberBuilder:
                 body_digits.append('028')
                 body_digits.append('029')
 
+                body_digits.append('030')
+                body_digits.append('031')
+                body_digits.append('032')
+                body_digits.append('033')
+                body_digits.append('034')
+                body_digits.append('035')
+                body_digits.append('036')
+                body_digits.append('037')
+                body_digits.append('038')
+                body_digits.append('039')
+
+                body_digits.append('040')
+                body_digits.append('041')
+                body_digits.append('042')
+                body_digits.append('043')
+                body_digits.append('044')
+                body_digits.append('045')
+                body_digits.append('046')
+                body_digits.append('047')
+                body_digits.append('048')
+                body_digits.append('049')
+
                 if (self._phone_number[4:7] in body_digits):
                     return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:7],self._phone_number[7:])
 
