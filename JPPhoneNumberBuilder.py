@@ -24,7 +24,7 @@ class JPPhoneNumberBuilder:
 
         self._phone_number = out_phone_number
 
-    def isJPPhoneNumber(self) -> bool:
+    def isJapanLandLinePhoneNumber(self) -> bool:
         
         if (re.match('^0\d{1}-\d{4}-\d{4}$',self._phone_number)):
             return True
@@ -54,7 +54,27 @@ class JPPhoneNumberBuilder:
      
         if (re.match('^0\d{9}$',self._phone_number)):
 
-            # 着信課金用電話番号
+            # 付加的役務電話番号（大量呼受付機能）
+            if (self._phone_number[1:4] == '180'):
+
+                body_digits = []
+
+                body_digits.append('991')
+                body_digits.append('992')
+                body_digits.append('993')
+                body_digits.append('994')
+                body_digits.append('995')
+                body_digits.append('996')
+                body_digits.append('997')
+                body_digits.append('998')
+                body_digits.append('999')
+
+                if (self._phone_number[4:7] in body_digits):
+                    return "{}-{}".format(self._phone_number[0:4],self._phone_number[4:])
+
+                raise ValueError(self._emcreator.message('JPPhoneNumberBuilder.py','hyphenated','invalid argument',f'the argument is an incompatible phone number : {self._phone_number}'))
+
+            # 付加的役務電話番号（着信課金用電話番号）
             if (self._phone_number[1:4] == '120'):
 
                 body_digits = []
