@@ -24,7 +24,7 @@ class JPPhoneNumberBuilder:
 
         self._phone_number = out_phone_number
 
-    def isJapanLandLinePhoneNumber(self) -> bool:
+    def isJPLandLinePhoneNumber(self) -> bool:
         
         if (re.match('^0\d{1}-\d{4}-\d{4}$',self._phone_number)):
             return True
@@ -1176,6 +1176,124 @@ class JPPhoneNumberBuilder:
                 body_digits.append('997')
                 body_digits.append('998')
                 body_digits.append('999')
+
+                if (self._phone_number[4:7] in body_digits):
+                    return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:7],self._phone_number[7:])
+
+            # 付加的役務電話番号（統一番号機能）
+            if (self._phone_number[1:4] == '570'):
+
+                body_digits = []
+
+                body_digits.append('000')
+                body_digits.append('001')
+                body_digits.append('002')
+                body_digits.append('003')
+                body_digits.append('004')
+                body_digits.append('005')
+                body_digits.append('006')
+                body_digits.append('007')
+                body_digits.append('008')
+                body_digits.append('009')
+
+                body_digits.append('010')
+                body_digits.append('011')
+                body_digits.append('012')
+                body_digits.append('013')
+                body_digits.append('014')
+                body_digits.append('015')
+                body_digits.append('016')
+                body_digits.append('017')
+                body_digits.append('018')
+                body_digits.append('019')
+
+                body_digits.append('020')
+                body_digits.append('021')
+                body_digits.append('022')
+                body_digits.append('023')
+                body_digits.append('024')
+                body_digits.append('025')
+                body_digits.append('026')
+                body_digits.append('027')
+                body_digits.append('028')
+                body_digits.append('029')
+
+                body_digits.append('030')
+                body_digits.append('031')
+                body_digits.append('032')
+                body_digits.append('033')
+                body_digits.append('034')
+                body_digits.append('035')
+                body_digits.append('036')
+                body_digits.append('037')
+                body_digits.append('038')
+                body_digits.append('039')
+
+                body_digits.append('040')
+                body_digits.append('041')
+                body_digits.append('042')
+                body_digits.append('043')
+                body_digits.append('044')
+                body_digits.append('045')
+                body_digits.append('046')
+                body_digits.append('047')
+                body_digits.append('048')
+                body_digits.append('049')
+
+                body_digits.append('050')
+                body_digits.append('051')
+                body_digits.append('052')
+                body_digits.append('053')
+                body_digits.append('054')
+                body_digits.append('055')
+                body_digits.append('056')
+                body_digits.append('057')
+                body_digits.append('058')
+                body_digits.append('059')
+
+                body_digits.append('060')
+                body_digits.append('061')
+                body_digits.append('062')
+                body_digits.append('063')
+                body_digits.append('064')
+                body_digits.append('065')
+                body_digits.append('066')
+                body_digits.append('067')
+                body_digits.append('068')
+                body_digits.append('069')
+
+                body_digits.append('070')
+                body_digits.append('071')
+                body_digits.append('072')
+                body_digits.append('073')
+                body_digits.append('074')
+                body_digits.append('075')
+                body_digits.append('076')
+                body_digits.append('077')
+                body_digits.append('078')
+                body_digits.append('079')
+
+                body_digits.append('080')
+                body_digits.append('081')
+                body_digits.append('082')
+                body_digits.append('083')
+                body_digits.append('084')
+                body_digits.append('085')
+                body_digits.append('086')
+                body_digits.append('087')
+                body_digits.append('088')
+                body_digits.append('089')
+
+                body_digits.append('090')
+                body_digits.append('091')
+                body_digits.append('092')
+                body_digits.append('093')
+                body_digits.append('094')
+                body_digits.append('095')
+                body_digits.append('096')
+                body_digits.append('097')
+                body_digits.append('098')
+                body_digits.append('099')
 
                 if (self._phone_number[4:7] in body_digits):
                     return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:7],self._phone_number[7:])
