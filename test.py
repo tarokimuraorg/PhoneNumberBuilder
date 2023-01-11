@@ -1,5 +1,6 @@
 from JPPhoneNumberBuilder import JPPhoneNumberBuilder
 
+"""
 try:
 
     print()
@@ -23,45 +24,19 @@ try:
     #pnbuilder = JPPhoneNumberBuilder('0120049000')
     #pnbuilder = JPPhoneNumberBuilder('0120059000')
 
-    """
     phone_number = pnbuilder.digits_only()
     print(phone_number)
         
     phone_number = pnbuilder.hyphenated()
     print(phone_number)
-    """
 
     for cnt1 in range(0,10):
 
-        #pnbuilder = JPPhoneNumberBuilder('012006{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012007{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012008{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012009{}000'.format(cnt))
-
-        #pnbuilder = JPPhoneNumberBuilder('012010{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012011{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012012{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012013{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012014{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012015{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012016{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012017{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012018{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012019{}000'.format(cnt))
-
-        #pnbuilder = JPPhoneNumberBuilder('012020{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012021{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012022{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012023{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012024{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012025{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012026{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012027{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012028{}000'.format(cnt))
-        #pnbuilder = JPPhoneNumberBuilder('012029{}000'.format(cnt))
-
         for cnt2 in range(0,10):
 
+            #pnbuilder = JPPhoneNumberBuilder('01200{}{}000'.format(cnt1, cnt2))
+            #pnbuilder = JPPhoneNumberBuilder('01201{}{}000'.format(cnt1, cnt2))
+            #pnbuilder = JPPhoneNumberBuilder('01202{}{}000'.format(cnt1, cnt2))
             #pnbuilder = JPPhoneNumberBuilder('01203{}{}000'.format(cnt1, cnt2))
             #pnbuilder = JPPhoneNumberBuilder('01204{}{}000'.format(cnt1, cnt2))
             #pnbuilder = JPPhoneNumberBuilder('01205{}{}000'.format(cnt1, cnt2))
@@ -99,6 +74,55 @@ try:
             print(phone_number)
 
         print()
+
+    for cnt in range(0,10):
+
+        pnbuilder = JPPhoneNumberBuilder(f'018099{cnt}000')
+        phone_number = pnbuilder.hyphenated()
+        print(phone_number)
+
+    for cnt1 in range(0,10):
+
+        for cnt2 in range(0,10):
+
+            pnbuilder = JPPhoneNumberBuilder(f'05700{cnt1}{cnt2}000')
+            phone_number = pnbuilder.hyphenated()
+            print(phone_number)
+
+        print()
+
+    for cnt in range(1,10):
+
+        pnbuilder = JPPhoneNumberBuilder(f'057012{cnt}000')
+        phone_number = pnbuilder.hyphenated()
+        print(phone_number)
+    
         
 except ValueError as ve:
     print(ve)
+"""
+"""
+for cnt in range(0,10):
+
+    try:
+        pnbuilder = JPPhoneNumberBuilder(f'057020{cnt}000')
+        phone_number = pnbuilder.hyphenated()
+        print(phone_number)
+
+    except ValueError as ve:
+        print(ve)
+        continue
+"""
+
+for cnt1 in range(0, 10):
+
+    for cnt2 in range(0, 10):
+
+        try:
+            pnbuilder = JPPhoneNumberBuilder(f'05709{cnt1}{cnt2}000')
+            phone_number = pnbuilder.hyphenated()
+            print(phone_number)
+
+        except ValueError as ve:
+            print(ve)
+            continue
