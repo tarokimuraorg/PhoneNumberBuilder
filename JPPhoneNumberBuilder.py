@@ -48,7 +48,7 @@ class JPPhoneNumberBuilder:
         if (re.match('^0\d{9}$',self._phone_number)):
             return self._phone_number
 
-        raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','init','invalid argument','the argument is an incompatible phone number.'))
+        raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','digits_only','invalid argument','the argument is an incompatible phone number.'))
 
     def hyphenated(self) -> str:
      
@@ -1295,6 +1295,25 @@ class JPPhoneNumberBuilder:
                 body_digits.append('098')
                 body_digits.append('099')
 
+                body_digits.append('200')
+                body_digits.append('300')
+                
+                body_digits.append('550')
+                body_digits.append('570')
+                body_digits.append('571')
+                body_digits.append('572')
+
+                body_digits.append('666')
+                body_digits.append('783')
+
+                body_digits.append('881')
+                body_digits.append('882')
+                body_digits.append('888')
+
+                body_digits.append('919')
+                body_digits.append('943')
+                body_digits.append('999')
+
                 if (self._phone_number[4:7] in body_digits):
                     return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:7],self._phone_number[7:])
 
@@ -1709,6 +1728,6 @@ class JPPhoneNumberBuilder:
             if (self._phone_number[1:2] in one_digits):
                 return "{}-{}-{}".format(self._phone_number[0:2],self._phone_number[2:6],self._phone_number[6:])
             
-            raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','init','invalid argument','the argument is an incompatible phone number.'))
+            raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','hyphenated','invalid argument',f'the argument is an incompatible phone number : {self._phone_number}'))
 
-        raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','init','invalid argument','the argument must be a 10-digit number.'))
+        raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','hyphenated','invalid argument','the argument must be a 10-digit number.'))
