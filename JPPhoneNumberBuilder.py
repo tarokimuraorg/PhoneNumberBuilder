@@ -24,6 +24,7 @@ class JPPhoneNumberBuilder:
 
         self._phone_number = out_phone_number
 
+    """
     def isJPLandLinePhoneNumber(self) -> bool:
         
         if (re.match('^0\d{1}-\d{4}-\d{4}$',self._phone_number)):
@@ -42,6 +43,7 @@ class JPPhoneNumberBuilder:
             return True
         
         return False
+    """
 
     def digits_only(self) -> str:
 
@@ -1316,7 +1318,38 @@ class JPPhoneNumberBuilder:
 
                 if (self._phone_number[4:7] in body_digits):
                     return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:7],self._phone_number[7:])
+            
+            # 固定電話 - 市外局番 : 011
+            if (self._phone_number[1:3] == '11'):
+                
+                body_digits = []
 
+                body_digits.append('200')
+                body_digits.append('201')
+                body_digits.append('202')
+                body_digits.append('203')
+                body_digits.append('204')
+                body_digits.append('205')
+                body_digits.append('206')
+                body_digits.append('207')
+                body_digits.append('208')
+                body_digits.append('209')
+
+                body_digits.append('210')
+                body_digits.append('211')
+                body_digits.append('212')
+                body_digits.append('213')
+                body_digits.append('214')
+                body_digits.append('215')
+                #body_digits.append('216')
+                #body_digits.append('217')
+                body_digits.append('218')
+                body_digits.append('219')
+
+                if (self._phone_number[3:6] in body_digits):
+                    return f"{self._phone_number[0:3]}-{self._phone_number[3:6]}-{self._phone_number[6:]}"
+
+            """
             # 市外局番 : 4桁
             four_digits = []
             four_digits.append('1267')
@@ -1727,6 +1760,7 @@ class JPPhoneNumberBuilder:
 
             if (self._phone_number[1:2] in one_digits):
                 return "{}-{}-{}".format(self._phone_number[0:2],self._phone_number[2:6],self._phone_number[6:])
+            """
             
             raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','hyphenated','invalid argument',f'the argument is an incompatible phone number : {self._phone_number}'))
 
