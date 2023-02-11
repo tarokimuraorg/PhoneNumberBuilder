@@ -1319,8 +1319,11 @@ class JPPhoneNumberBuilder:
                 if (self._phone_number[4:7] in body_digits):
                     return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:7],self._phone_number[7:])
             
-            # 固定電話 - 市外局番 : 011
-            if (self._phone_number[1:3] == '11'):
+            # 固定電話 - 市外局番 : 2桁
+            head_digits = []
+            head_digits.append('11')
+
+            if (self._phone_number[1:3] in head_digits):
                 
                 body_digits = []
 
@@ -1345,6 +1348,93 @@ class JPPhoneNumberBuilder:
                 #body_digits.append('217')
                 body_digits.append('218')
                 body_digits.append('219')
+
+                #body_digits.append('220')
+                body_digits.append('221')
+                body_digits.append('222')
+                body_digits.append('223')
+                #body_digits.append('224')
+                #body_digits.append('225')
+                #body_digits.append('226')
+                #body_digits.append('227')
+                #body_digits.append('228')
+                #body_digits.append('229')
+
+                #body_digits.append('230')
+                body_digits.append('231')
+                body_digits.append('232')
+                body_digits.append('233')
+                body_digits.append('234')
+                #body_digits.append('235')
+                #body_digits.append('236')
+                #body_digits.append('237')
+                #body_digits.append('238')
+                #body_digits.append('239')
+
+                #body_digits.append('240')
+                body_digits.append('241')
+                body_digits.append('242')
+                #body_digits.append('243')
+                #body_digits.append('244')
+                #body_digits.append('245')
+                #body_digits.append('246')
+                #body_digits.append('247')
+                #body_digits.append('248')
+                #body_digits.append('249')
+
+                #body_digits.append('250')
+                body_digits.append('251')
+                body_digits.append('252')
+                #body_digits.append('253')
+                #body_digits.append('254')
+                #body_digits.append('255')
+                #body_digits.append('256')
+                #body_digits.append('257')
+                #body_digits.append('258')
+                #body_digits.append('259')
+
+                #body_digits.append('260')
+                body_digits.append('261')
+                #body_digits.append('262')
+                #body_digits.append('263')
+                #body_digits.append('264')
+                #body_digits.append('265')
+                #body_digits.append('266')
+                #body_digits.append('267')
+                #body_digits.append('269')
+
+                #body_digits.append('270')
+                body_digits.append('271')
+                body_digits.append('272')
+                #body_digits.append('273')
+                #body_digits.append('274')
+                #body_digits.append('275')
+                #body_digits.append('276')
+                #body_digits.append('277')
+                #body_digits.append('278')
+                #body_digits.append('279')
+
+                body_digits.append('280')
+                body_digits.append('281')
+                #body_digits.append('282')
+                #body_digits.append('283')
+                #body_digits.append('284')
+                #body_digits.append('285')
+                #body_digits.append('286')
+                #body_digits.append('287')
+                #body_digits.append('288')
+                #body_digits.append('289')
+
+                body_digits.append('290')
+                #body_digits.append('291')
+                #body_digits.append('292')
+                #body_digits.append('293')
+                #body_digits.append('294')
+                #body_digits.append('295')
+                #body_digits.append('296')
+                #body_digits.append('297')
+                #body_digits.append('298')
+                body_digits.append('299')
 
                 if (self._phone_number[3:6] in body_digits):
                     return f"{self._phone_number[0:3]}-{self._phone_number[3:6]}-{self._phone_number[6:]}"
