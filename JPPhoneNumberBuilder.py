@@ -24,27 +24,6 @@ class JPPhoneNumberBuilder:
 
         self._phone_number = out_phone_number
 
-    """
-    def isJPLandLinePhoneNumber(self) -> bool:
-        
-        if (re.match('^0\d{1}-\d{4}-\d{4}$',self._phone_number)):
-            return True
-
-        if (re.match('^0\d{2}-\d{3}-\d{4}$',self._phone_number)):
-            return True
-
-        if (re.match('^0\d{3}-\d{2}-\d{4}$',self._phone_number)):
-            return True
-
-        if (re.match('^0\d{4}-\d{1}-\d{4}$',self._phone_number)):
-            return True
-
-        if (re.match('^0\d{3}-\d{3}-\d{3}', self._phone_number)):
-            return True
-        
-        return False
-    """
-
     def digits_only(self) -> str:
 
         if (re.match('^0\d{9}$',self._phone_number)):
