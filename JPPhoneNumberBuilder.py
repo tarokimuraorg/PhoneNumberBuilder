@@ -2078,6 +2078,105 @@ class JPPhoneNumberBuilder:
                 if (self._phone_number[3:6] in body_digits):
                     return f"{self._phone_number[0:3]}-{self._phone_number[3:6]}-{self._phone_number[6:]}"
             
+            # 固定電話 - 市外局番 : 3桁
+            head_digits = []
+            head_digits.append('123')
+
+            if (self._phone_number[1:4] in head_digits):
+
+                body_digits = []
+
+                body_digits.append('20')
+                body_digits.append('21')
+                body_digits.append('22')
+                body_digits.append('23')
+                body_digits.append('24')
+                body_digits.append('25')
+                body_digits.append('26')
+                body_digits.append('27')
+                body_digits.append('28')
+                body_digits.append('29')
+
+                #body_digits.append('30')
+                body_digits.append('31')
+                body_digits.append('32')
+                body_digits.append('33')
+                body_digits.append('34')
+                body_digits.append('35')
+                body_digits.append('36')
+                body_digits.append('37')
+                body_digits.append('38')
+                body_digits.append('39')
+
+                body_digits.append('40')
+                #body_digits.append('41')
+                body_digits.append('42')
+                body_digits.append('43')
+                #body_digits.append('44')
+                body_digits.append('45')
+                body_digits.append('46')
+                body_digits.append('47')
+                body_digits.append('48')
+                body_digits.append('49')
+
+                body_digits.append('50')
+                #body_digits.append('51')
+                body_digits.append('52')
+                body_digits.append('53')
+                body_digits.append('54')
+                body_digits.append('55')
+                body_digits.append('56')
+                body_digits.append('57')
+                body_digits.append('58')
+                body_digits.append('59')
+
+                #body_digits.append('60')
+                #body_digits.append('61')
+                # body_digits.append('62')
+                # body_digits.append('63')
+                # body_digits.append('64')
+                # body_digits.append('65')
+                body_digits.append('66')
+                #body_digits.append('67')
+                body_digits.append('68')
+                #body_digits.append('69')
+
+                # body_digits.append('70')
+                # body_digits.append('71')
+                body_digits.append('72')
+                body_digits.append('73')
+                body_digits.append('74')
+                body_digits.append('75')
+                body_digits.append('76')
+                body_digits.append('77')
+                body_digits.append('78')
+                # body_digits.append('79')
+
+                # body_digits.append('80')
+                # body_digits.append('81')
+                body_digits.append('82')
+                body_digits.append('83')
+                body_digits.append('84')
+                body_digits.append('85')
+                body_digits.append('86')
+                body_digits.append('87')
+                body_digits.append('88')
+                body_digits.append('89')
+
+                # body_digits.append('90')
+                # body_digits.append('91')
+                body_digits.append('92')
+                body_digits.append('93')
+                # body_digits.append('94')
+                # body_digits.append('95')
+                # body_digits.append('96')
+                # body_digits.append('97')
+                body_digits.append('98')
+                # body_digits.append('99')
+                
+                if (self._phone_number[4:6] in body_digits):
+                    return f"{self._phone_number[0:4]}-{self._phone_number[4:6]}-{self._phone_number[6:]}"
+
             raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','hyphenated','invalid argument',f'the argument ({self._phone_number}) is an incompatible phone number.'))
 
         raise ValueError(self._emcreator.message('PhoneNumberBuilder.py','hyphenated','invalid argument','the argument must be a 10-digit number.'))
