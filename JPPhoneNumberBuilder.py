@@ -1299,10 +1299,10 @@ class JPPhoneNumberBuilder:
                     return "{}-{}-{}".format(self._phone_number[0:4],self._phone_number[4:7],self._phone_number[7:])
             
             # 固定電話 - 市外局番 : 2桁
-            head_digits = []
-            head_digits.append('11')
+            #head_digits = []
+            #head_digits.append('11')
 
-            if (self._phone_number[1:3] in head_digits):
+            if (self._phone_number[1:3] == '11'):
                 
                 body_digits = []
 
@@ -2079,10 +2079,10 @@ class JPPhoneNumberBuilder:
                     return f"{self._phone_number[0:3]}-{self._phone_number[3:6]}-{self._phone_number[6:]}"
             
             # 固定電話 - 市外局番 : 3桁
-            head_digits = []
-            head_digits.append('123')
+            #head_digits = []
+            #head_digits.append('123')
 
-            if (self._phone_number[1:4] in head_digits):
+            if (self._phone_number[1:4] == '123'):
 
                 body_digits = []
 
