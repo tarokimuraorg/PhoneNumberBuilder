@@ -1,4 +1,4 @@
-class ErrorMessageCreator:
+class ErrorMessageBuilder:
 
     def message(self, file_name : str, function_name : str, error_type : str, error_message : str) -> str:
 
