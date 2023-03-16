@@ -1,7 +1,7 @@
 import re
 from StringConvertor import StringConvertor
-from ErrorMessageBuilder import ErrorMessageBuilder
-from JPPhoneBook import JPPhoneBook
+import ErrorMessageBuilder
+import JPPhoneBook
 
 class JPPhoneNumberBuilder:
     
@@ -23,14 +23,14 @@ class JPPhoneNumberBuilder:
         out_phone_number = StringConvertor().toHankaku(out_phone_number)
 
         self._phone_number = out_phone_number
-        self._phone_book = JPPhoneBook().create()
+        self._phone_book = JPPhoneBook.create()
 
     def digits_only(self) -> str:
 
         if (re.match('^0\d{9}$',self._phone_number)):
             return self._phone_number
 
-        raise ValueError(ErrorMessageBuilder().message('PhoneNumberBuilder.py','digits_only','invalid argument','the argument is an incompatible phone number.'))
+        raise ValueError(ErrorMessageBuilder.message('PhoneNumberBuilder.py','digits_only','invalid argument','the argument is an incompatible phone number.'))
 
     def hyphenated(self) -> str:
 
@@ -53,7 +53,7 @@ class JPPhoneNumberBuilder:
 
             if (head_digits in self._phone_book):
 
-                if (self._phone_number[4:7] in self._phone_book[head_digits]):
+                if (self._phone_number[4:6] in self._phone_book[head_digits]):
                     return f"{self._phone_number[0:4]}-{self._phone_number[4:6]}-{self._phone_number[6:]}"
                 
             # 市外局番 - 2桁
@@ -64,6 +64,6 @@ class JPPhoneNumberBuilder:
                 if (self._phone_number[3:6] in self._phone_book[head_digits]):
                     return f"{self._phone_number[0:3]}-{self._phone_number[3:6]}-{self._phone_number[6:]}"
 
-            raise ValueError(ErrorMessageBuilder().message('PhoneNumberBuilder.py','hyphenated','invalid argument',f'the argument ({self._phone_number}) is an incompatible phone number.'))
+            raise ValueError(ErrorMessageBuilder.message('PhoneNumberBuilder.py','hyphenated','invalid argument',f'the argument ({self._phone_number}) is an incompatible phone number.'))
 
-        raise ValueError(ErrorMessageBuilder().message('PhoneNumberBuilder.py','hyphenated','invalid argument','the argument must be a 10-digit number.'))
+        raise ValueError(ErrorMessageBuilder.message('PhoneNumberBuilder.py','hyphenated','invalid argument','the argument must be a 10-digit number.'))
