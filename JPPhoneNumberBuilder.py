@@ -36,11 +36,12 @@ class JPPhoneNumberBuilder:
 
             head_digits = self._phone_number[1:4]
 
+            # 付加的役務電話番号 : 4桁
             if (head_digits == '180'):
 
                 if (self._phone_number[4:7] in self._phone_book[head_digits]):
                     return f"{self._phone_number[0:4]}-{self._phone_number[4:]}"
-    
+
             elif (head_digits == '120' or head_digits == '570'):
 
                 if (self._phone_number[4:7] in self._phone_book[head_digits]):
