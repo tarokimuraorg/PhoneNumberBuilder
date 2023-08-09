@@ -2588,4 +2588,28 @@ def create():
     phone_book['1374'].append('8')
     phone_book['1374'].append('9')
 
+    phone_book.setdefault('137', [])
+
+    phone_book['137'].append('50')
+    # phone_book['137'].append('51')
+    # phone_book['137'].append('52')
+    # phone_book['137'].append('53')
+    # phone_book['137'].append('54')
+    phone_book['137'].append('55')
+    # phone_book['137'].append('56')
+    # phone_book['137'].append('57')
+    # phone_book['137'].append('58')
+    # phone_book['137'].append('59')
+
+    phone_book['137'].append('60')
+    # phone_book['137'].append('61')
+    phone_book['137'].append('62')
+    phone_book['137'].append('63')
+    phone_book['137'].append('64')
+    phone_book['137'].append('65')
+    phone_book['137'].append('66')
+    phone_book['137'].append('67')
+    phone_book['137'].append('68')
+    # phone_book['137'].append('69')
+
     return phone_book
